@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="cd2.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GettingStartedLib\GettingStartedLib.csproj">

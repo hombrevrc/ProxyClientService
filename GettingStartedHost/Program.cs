@@ -57,7 +57,8 @@ namespace GettingStartedHost
       ///Step 2 – Creates an instance of the ServiceHost class to host the service. 
       ///The constructor takes two parameters, the type of the class that 
       ///implements the service contract, and the base address of the service.
-      selfHost = new ServiceHost(typeof(GettingStartedLib.CalculatorService), baseAddress);
+      selfHost = new ServiceHost(typeof(GettingStartedLib.CalculatorService), 
+        baseAddress);
 
       try
       {
@@ -74,7 +75,8 @@ namespace GettingStartedHost
         ///The address is appended to the base address to 
         ///identify the endpoint. The address specified in this code is "CalculatorService" 
         ///so the fully qualified address for the endpoint is "http://localhost:8000/GettingStarted/CalculatorService".
-        selfHost.AddServiceEndpoint(typeof(GettingStartedLib.ICalculator), new WSHttpBinding(), "CalculatorService");
+        selfHost.AddServiceEndpoint(typeof(GettingStartedLib.ICalculator), 
+          new WSHttpBinding(), "CalculatorService");
 
         ///Step 4 – Enable metadata exchange. 
         ///Clients will use metadata exchange to generate proxies that will be used to call the service operations. 
@@ -86,6 +88,7 @@ namespace GettingStartedHost
         {
           HttpGetEnabled = true
         };
+
         selfHost.Description.Behaviors.Add(smb);
 
         ///Step 5 – Open the ServiceHost to listen for incoming messages. 

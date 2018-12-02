@@ -43,7 +43,7 @@ namespace GettingStartedClient
 
       Console.WriteLine("Calculator");
       client.Calc();
-      Console.ReadLine();
+      Console.ReadKey();
 
 
       //Step 3: Closing the client gracefully closes the connection and cleans up resources.
