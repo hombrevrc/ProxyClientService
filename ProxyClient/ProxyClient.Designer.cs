@@ -251,6 +251,7 @@
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Proxy Client";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProxyClient_FormClosing);
       this.Load += new System.EventHandler(this.ProxyClient_Load);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();

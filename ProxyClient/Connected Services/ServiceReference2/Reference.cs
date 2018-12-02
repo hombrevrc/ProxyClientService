@@ -16,10 +16,10 @@ namespace ProxyClientx.ServiceReference2 {
     public interface ICalculator {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://acleite/myservices/2018/12/02/ICalculator/Add", ReplyAction="http://acleite/myservices/2018/12/02/ICalculator/AddResponse")]
-        double Add(double n1, double n2);
+        int Add(short n1, short n2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://acleite/myservices/2018/12/02/ICalculator/Add", ReplyAction="http://acleite/myservices/2018/12/02/ICalculator/AddResponse")]
-        System.Threading.Tasks.Task<double> AddAsync(double n1, double n2);
+        System.Threading.Tasks.Task<int> AddAsync(short n1, short n2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://acleite/myservices/2018/12/02/ICalculator/Subtract", ReplyAction="http://acleite/myservices/2018/12/02/ICalculator/SubtractResponse")]
         double Subtract(double n1, double n2);
@@ -79,11 +79,11 @@ namespace ProxyClientx.ServiceReference2 {
                 base(binding, remoteAddress) {
         }
         
-        public double Add(double n1, double n2) {
+        public int Add(short n1, short n2) {
             return base.Channel.Add(n1, n2);
         }
         
-        public System.Threading.Tasks.Task<double> AddAsync(double n1, double n2) {
+        public System.Threading.Tasks.Task<int> AddAsync(short n1, short n2) {
             return base.Channel.AddAsync(n1, n2);
         }
         

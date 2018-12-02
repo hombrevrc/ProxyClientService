@@ -1,5 +1,6 @@
 ﻿using ProxyClientx.ServiceReference2;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ProxyClientx
@@ -19,18 +20,36 @@ namespace ProxyClientx
       tbValue2.Text = "";
       lblOperation.Text = "";
       lblresult.Text = "";
+      ValidateValues();
     }
 
     private void tbValue1_TextChanged(object sender, EventArgs e)
     {
-
+      ValidateValues();
     }
 
     private void tbValue2_TextChanged(object sender, EventArgs e)
     {
-
+      ValidateValues();
     }
 
+    private void ValidateValues()
+    {
+      if (int.TryParse(tbValue1.Text, out int x) && int.TryParse(tbValue2.Text, out x))
+      {
+        btnPlus.Enabled = true;
+        btnSubtract.Enabled = true;
+        btnMultiply.Enabled = true;
+        btnDivide.Enabled = true;
+      }
+      else
+      {
+        btnPlus.Enabled = false;
+        btnSubtract.Enabled = false;
+        btnMultiply.Enabled = false;
+        btnDivide.Enabled = false;
+      }
+    }
     private double value1;
     private double value2;
 
@@ -39,8 +58,8 @@ namespace ProxyClientx
       lblOperation.Text = "+";
       double.TryParse(tbValue1.Text, out value1);
       double.TryParse(tbValue2.Text, out value2);
-      double result = client.Add(value1, value2);
-      lblresult.Text = result.ToString("0.00");
+      int result = client.Add(Convert.ToInt16(value1), Convert.ToInt16(value2));
+      lblresult.Text = result.ToString();
     }
 
     private void btnSubtract_Click(object sender, EventArgs e)
@@ -70,7 +89,7 @@ namespace ProxyClientx
       lblresult.Text = result.ToString("0.00");
     }
 
-    bool CalcIsOn = false;
+    private bool CalcIsOn = false;
     private void btnCalc_Click(object sender, EventArgs e)
     {
       if (CalcIsOn)
@@ -82,18 +101,29 @@ namespace ProxyClientx
       {
         CalcIsOn = client.Calc();
       }
-      
+
     }
 
-    private void btnExit_Click(object sender, EventArgs e)
+    private void CloseApplication()
     {
       if (CalcIsOn)
       {
         client.CloseCalc();
+        Thread.Sleep(1000);
       }
 
       client.Close();
-      Close();
+      Environment.Exit(0);
+    }
+
+    private void btnExit_Click(object sender, EventArgs e)
+    {
+      CloseApplication();
+    }
+
+    private void ProxyClient_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      CloseApplication();
     }
   }
 }
