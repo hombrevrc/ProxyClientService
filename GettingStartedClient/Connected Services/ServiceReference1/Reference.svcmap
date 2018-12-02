@@ -25,6 +25,13 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b1ecf1f7-8632-4fce-8303-94ffbcbf1594" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
     <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="1b57bd3d-763d-4562-83b6-3827800260dc" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ba3dc686-9a38-4449-b29c-d5e0ffae74d6" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="System.Diagnostics.xsd" MetadataType="Schema" ID="785684c4-9471-4add-a983-ac5bdb5f4b27" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="System.ComponentModel.xsd" MetadataType="Schema" ID="f9be94af-f3d3-47f4-8543-86a1b9073d62" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="fd01bedc-b569-4a87-b29c-e827eff5c8fb" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="00830c3c-a3bd-42fd-8543-dafb66ba2d42" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="System.Security.xsd" MetadataType="Schema" ID="d486c68d-46f4-4663-8d07-6c24d8b65cc9" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="System.Text.xsd" MetadataType="Schema" ID="90bd0410-6a1c-4907-8879-8cddd9702346" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="System.Globalization.xsd" MetadataType="Schema" ID="2a21be5a-f091-41b3-a467-568863013890" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

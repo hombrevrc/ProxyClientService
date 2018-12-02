@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Reflection;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-
+using System.IO;
 namespace GettingStartedHost
 {
   internal class Program
   {
+
+    #region Properties
     private static Uri _baseAddress;
 
     public static Uri baseAddress
@@ -31,13 +34,18 @@ namespace GettingStartedHost
       set { _smb = value; }
     }
 
+    #endregion Properties
 
 
+    private static void w(string s)
+    {
+      using (StreamWriter sw = File.AppendText("log.txt"))
+      {
+        sw.WriteLine(DateTime.Now.ToShortTimeString() + " - " + s);
+      }
+    }
     private static void Main(string[] args)
     {
-
-
-
       ///Step 1 - Creates an instance of the Uri class to hold the base 
       ///address of the service. Services are identified by a URL which 
       ///contains a base address and an optional URI.The base address is 
@@ -45,7 +53,7 @@ namespace GettingStartedHost
       ///The base address for the calculator service uses the HTTP transport, 
       ///localhost, port 8000, and the URI segment "GettingStarted"
       baseAddress = new Uri("http://localhost:8000/GettingStarted/");
-
+      w("baseAddress: " + baseAddress.AbsolutePath);
       ///Step 2 – Creates an instance of the ServiceHost class to host the service. 
       ///The constructor takes two parameters, the type of the class that 
       ///implements the service contract, and the base address of the service.
@@ -88,7 +96,7 @@ namespace GettingStartedHost
         ///For more information about safely catching exceptions thrown by ServiceHost, 
         ///see Use Close and Abort to release WCF client resources
         selfHost.Open();
-        Console.WriteLine("The service is ready.");
+        Console.WriteLine("The service is ready: " + Assembly.GetEntryAssembly().GetName().Version.ToString());
         Console.WriteLine("Press <ENTER> to terminate service.");
         Console.WriteLine();
         Console.ReadLine();

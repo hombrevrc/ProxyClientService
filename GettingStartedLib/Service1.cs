@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 
 namespace GettingStartedLib
 {
@@ -39,6 +40,11 @@ namespace GettingStartedLib
       Console.WriteLine($"Received Divide({n1},{n2})");
       Console.WriteLine($"Return: {result}");
       return result;
+    }
+
+    public void Calc()
+    {
+       System.Diagnostics.Process.Start("calc");
     }
   }
 }

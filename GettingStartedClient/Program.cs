@@ -8,11 +8,13 @@ namespace GettingStartedClient
 {
   class Program
   {
+       
     static void Main(string[] args)
     {
+       
       //Step 1: Create an instance of the WCF proxy.
       CalculatorClient client = new CalculatorClient();
-
+      
       // Step 2: Call the service operations.
       // Call the Add service operation.
       double value1 = 100.00D;
@@ -37,9 +39,19 @@ namespace GettingStartedClient
       value2 = 7.00D;
       result = client.Divide(value1, value2);
       Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
+
+
+      Console.WriteLine("Calculator");
+      client.Calc();
       Console.ReadLine();
+
+
       //Step 3: Closing the client gracefully closes the connection and cleans up resources.
+      //c.Close();
+       
       client.Close();
     }
+
+     
   }
 }

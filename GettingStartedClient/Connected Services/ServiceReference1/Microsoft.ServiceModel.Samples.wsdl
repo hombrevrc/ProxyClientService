@@ -4,6 +4,13 @@
     <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
       <xsd:import namespace="http://Microsoft.ServiceModel.Samples" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Diagnostics" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Security" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Text" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Globalization" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICalculator_Add_InputMessage">
@@ -30,6 +37,12 @@
   <wsdl:message name="ICalculator_Divide_OutputMessage">
     <wsdl:part name="parameters" element="tns:DivideResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_Calc_InputMessage">
+    <wsdl:part name="parameters" element="tns:Calc" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_Calc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalcResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICalculator">
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add" message="tns:ICalculator_Add_InputMessage" />
@@ -46,6 +59,10 @@
     <wsdl:operation name="Divide">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide" message="tns:ICalculator_Divide_InputMessage" />
       <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse" message="tns:ICalculator_Divide_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Calc">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Calc" message="tns:ICalculator_Calc_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/CalcResponse" message="tns:ICalculator_Calc_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
