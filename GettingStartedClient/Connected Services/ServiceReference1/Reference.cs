@@ -29,6 +29,9 @@ namespace GettingStartedClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Calc", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/CalcResponse")]
         void Calc();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/CloseCalc", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/CloseCalcResponse")]
+        void CloseCalc();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -76,6 +79,10 @@ namespace GettingStartedClient.ServiceReference1 {
         
         public void Calc() {
             base.Channel.Calc();
+        }
+        
+        public void CloseCalc() {
+            base.Channel.CloseCalc();
         }
     }
 }

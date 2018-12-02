@@ -20,6 +20,8 @@ namespace GettingStartedLib
     double Divide(double n1, double n2);
     [OperationContract]
     void Calc();
+    [OperationContract]
+    void CloseCalc();
   }
 
 }

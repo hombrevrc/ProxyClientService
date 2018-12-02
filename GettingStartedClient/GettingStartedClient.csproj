@@ -64,6 +64,15 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="config\appSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="config\bindings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="config\client.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Connected Services\ServiceReference1\Microsoft.ServiceModel.Samples.wsdl" />
     <None Include="Connected Services\ServiceReference1\Microsoft.ServiceModel.Samples.xsd">
       <SubType>Designer</SubType>
@@ -92,5 +101,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

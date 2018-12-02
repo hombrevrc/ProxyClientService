@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
-using System.ServiceModel.Configuration;
-using System.Configuration;
-using System.Text;
-using System.ServiceModel.Description;
-using System.Reflection;
 using System.IO;
 
 namespace GettingStartedLib
@@ -16,11 +6,20 @@ namespace GettingStartedLib
   public class CalculatorService : ICalculator
   {
 
-    private   void w(string s)
+    private void w(string s)
     {
-      using (StreamWriter sw = File.AppendText("logCalculatorService.txt"))
+      try
       {
-        sw.WriteLine(DateTime.Now.ToShortTimeString() + " - " + s);
+        using (StreamWriter sw = File.AppendText("logCalculatorService.txt"))
+        {
+          Console.WriteLine(DateTime.Now.ToShortTimeString() + " - " + s);
+          sw.WriteLine(DateTime.Now.ToShortTimeString() + " - " + s);
+        }
+      }
+      catch (Exception)
+      {
+
+        throw;
       }
     }
 
@@ -56,13 +55,42 @@ namespace GettingStartedLib
       return result;
     }
 
+    private System.Diagnostics.Process c = null;
+
     public void Calc()
     {
-      
+      if (c == null)
+      {
+
+        try
+        {
+          c = System.Diagnostics.Process.Start("calc");
+          w("Calc Running");
+        }
+        catch (Exception)
+        {
+          throw;
+        }
+      }
+    }
+
+    public void CloseCalc()
+    {
+      try
+      {
+        if (c != null)
+        {
+          c.Close();
+          w("Calc Closed");
+        }
+      }
+      catch (Exception)
+      {
+        throw;
+      }
 
     }
 
-     
 
 
   }

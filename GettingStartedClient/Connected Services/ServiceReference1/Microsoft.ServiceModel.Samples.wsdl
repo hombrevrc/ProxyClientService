@@ -36,6 +36,12 @@
   <wsdl:message name="ICalculator_Calc_OutputMessage">
     <wsdl:part name="parameters" element="tns:CalcResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_CloseCalc_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseCalc" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_CloseCalc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseCalcResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICalculator">
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add" message="tns:ICalculator_Add_InputMessage" />
@@ -56,6 +62,10 @@
     <wsdl:operation name="Calc">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Calc" message="tns:ICalculator_Calc_InputMessage" />
       <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/CalcResponse" message="tns:ICalculator_Calc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseCalc">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/CloseCalc" message="tns:ICalculator_CloseCalc_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/CloseCalcResponse" message="tns:ICalculator_CloseCalc_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

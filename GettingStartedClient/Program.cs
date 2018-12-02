@@ -47,8 +47,8 @@ namespace GettingStartedClient
 
 
       //Step 3: Closing the client gracefully closes the connection and cleans up resources.
-      //c.Close();
-       
+      client.CloseCalc();
+
       client.Close();
     }
 
