@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f4865c8f-bbdc-42a2-b83d-3bb19b8f783d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2f6b3840-adc8-46fb-a462-b322aadf3639" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -21,10 +22,10 @@
     <MetadataSource Address="http://localhost:8000/GettingStarted/CalculatorService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="02.wsdl" MetadataType="Wsdl" ID="d584bd73-e24a-40f4-baab-a60d87ae2c28" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b1ecf1f7-8632-4fce-8303-94ffbcbf1594" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
-    <MetadataFile FileName="02.xsd" MetadataType="Schema" ID="c399aa2c-204a-474e-a3e3-9172ee85b3b7" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ba3dc686-9a38-4449-b29c-d5e0ffae74d6" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="02.wsdl" MetadataType="Wsdl" ID="833d5928-1fb0-4a27-8a51-c6ec41e53757" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b6ecdba3-48fd-4204-8cef-e795f233902f" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="02.xsd" MetadataType="Schema" ID="baf7da25-6bea-4d6d-aa6b-5ec326eead89" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5ae9902e-a6a7-49eb-89ae-7577666fa309" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

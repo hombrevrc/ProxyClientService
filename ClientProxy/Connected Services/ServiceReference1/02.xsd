@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://Microsoft.ServiceModel.Samples" elementFormDefault="qualified" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://acleite/myservices/2018/12/02" elementFormDefault="qualified" targetNamespace="http://acleite/myservices/2018/12/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Add">
     <xs:complexType>
       <xs:sequence>

@@ -102,7 +102,7 @@ namespace GettingStartedHost
         Console.WriteLine("The service is ready: " + Assembly.GetEntryAssembly().GetName().Version.ToString());
         Console.WriteLine("Press <ENTER> to terminate service.");
         Console.WriteLine();
-        Console.ReadLine();
+        Console.ReadKey();
 
         // Close the ServiceHostBase to shutdown the service.
         selfHost.Close();

@@ -14,6 +14,7 @@ namespace GettingStartedLib
         {
           Console.WriteLine(DateTime.Now.ToShortTimeString() + " - " + s);
           sw.WriteLine(DateTime.Now.ToShortTimeString() + " - " + s);
+           
         }
       }
       catch (Exception)
@@ -57,7 +58,7 @@ namespace GettingStartedLib
 
     private System.Diagnostics.Process c = null;
 
-    public void Calc()
+    public bool Calc()
     {
       if (c == null)
       {
@@ -66,12 +67,14 @@ namespace GettingStartedLib
         {
           c = System.Diagnostics.Process.Start("calc");
           w("Calc Running");
+          return true;
         }
         catch (Exception)
         {
           throw;
         }
       }
+      return false;
     }
 
     public void CloseCalc()
@@ -80,7 +83,8 @@ namespace GettingStartedLib
       {
         if (c != null)
         {
-          c.Close();
+          c.Kill();
+          c = null;
           w("Calc Closed");
         }
       }

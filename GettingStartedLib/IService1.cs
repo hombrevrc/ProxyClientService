@@ -7,7 +7,7 @@ using System.Text;
 
 namespace GettingStartedLib
 {
-  [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
+  [ServiceContract(Namespace = "http://acleite/myservices/2018/12/02")]
   public interface ICalculator
   {
     [OperationContract]
@@ -19,7 +19,7 @@ namespace GettingStartedLib
     [OperationContract]
     double Divide(double n1, double n2);
     [OperationContract]
-    void Calc();
+    bool Calc();
     [OperationContract]
     void CloseCalc();
   }
