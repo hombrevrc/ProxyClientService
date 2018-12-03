@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using GettingStartedClient.ServiceReference1;
+﻿using GettingStartedClient.ServiceReference1;
+using System;
 
 namespace GettingStartedClient
 {
-  class Program
+  internal class Program
   {
-       
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-       
+
       //Step 1: Create an instance of the WCF proxy.
       CalculatorClient client = new CalculatorClient();
-      
+
       // Step 2: Call the service operations.
       // Call the Add service operation.
       double value1 = 100.00D;
@@ -41,7 +37,7 @@ namespace GettingStartedClient
       Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
 
 
-      Console.WriteLine("Calculator");
+      Console.WriteLine("Calc.exe");
       client.Calc();
       Console.ReadKey();
 
@@ -52,6 +48,6 @@ namespace GettingStartedClient
       client.Close();
     }
 
-     
+
   }
 }

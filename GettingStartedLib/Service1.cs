@@ -35,7 +35,7 @@ namespace GettingStartedLib
 
       if (c != null)
       {
-        Process proc = Process.GetProcessesByName("Calc")[0];
+        Process proc = Process.GetProcessesByName("Calculator")[0];
         SetForegroundWindow(proc.MainWindowHandle);
         Thread.Sleep(1000);
         SendKeys.SendWait("{ESC}"); SendKeys.Flush();
@@ -56,7 +56,7 @@ namespace GettingStartedLib
       double result = n1 - n2;
       if (c != null)
       {
-        Process proc = Process.GetProcessesByName("Calc")[0];
+        Process proc = Process.GetProcessesByName("Calc.exe")[0];
         SetForegroundWindow(proc.MainWindowHandle);
         Thread.Sleep(1000);
         SendKeys.SendWait("{ESC}"); SendKeys.Flush();
@@ -76,7 +76,7 @@ namespace GettingStartedLib
       double result = n1 * n2;
       if (c != null)
       {
-        Process proc = Process.GetProcessesByName("Calc")[0];
+        Process proc = Process.GetProcessesByName("Calc.exe")[0];
         SetForegroundWindow(proc.MainWindowHandle);
         Thread.Sleep(1000);
         SendKeys.SendWait("{ESC}"); SendKeys.Flush();
@@ -93,14 +93,14 @@ namespace GettingStartedLib
 
     public double Divide(double n1, double n2)
     {
-      
+
 
       if (Math.Abs(n2) > 0.001)
       {
         double result = n1 / n2;
         if (c != null)
         {
-          Process proc = Process.GetProcessesByName("Calc")[0];
+          Process proc = Process.GetProcessesByName("Calc.exe")[0];
           SetForegroundWindow(proc.MainWindowHandle);
           Thread.Sleep(1000);
           SendKeys.SendWait("{ESC}"); SendKeys.Flush();
@@ -135,7 +135,7 @@ namespace GettingStartedLib
 
         try
         {
-          c = System.Diagnostics.Process.Start("calc");
+          c = System.Diagnostics.Process.Start("Calc.exe");
           c.WaitForInputIdle();
 
           IntPtr h = c.MainWindowHandle;
@@ -145,8 +145,9 @@ namespace GettingStartedLib
 
           return true;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+          Debug.WriteLine(ex.Message);
           throw;
         }
       }

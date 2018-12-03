@@ -59,7 +59,7 @@ namespace nsProxyClient
       double.TryParse(tbValue1.Text, out value1);
       double.TryParse(tbValue2.Text, out value2);
       double result = client.Add(Convert.ToDouble(value1), Convert.ToDouble(value2));
-      lblresult.Text = result.ToString();
+      lblresult.Text = result.ToString("0.00");
     }
 
     private void btnSubtract_Click(object sender, EventArgs e)
