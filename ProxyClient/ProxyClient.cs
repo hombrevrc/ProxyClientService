@@ -1,9 +1,9 @@
-﻿using ProxyClientx.ServiceReference2;
+﻿using nsProxyClient.ServiceReference2;
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace ProxyClientx
+namespace nsProxyClient
 {
   public partial class ProxyClient : Form
   {
@@ -58,7 +58,7 @@ namespace ProxyClientx
       lblOperation.Text = "+";
       double.TryParse(tbValue1.Text, out value1);
       double.TryParse(tbValue2.Text, out value2);
-      int result = client.Add(Convert.ToInt16(value1), Convert.ToInt16(value2));
+      double result = client.Add(Convert.ToDouble(value1), Convert.ToDouble(value2));
       lblresult.Text = result.ToString();
     }
 
@@ -113,6 +113,7 @@ namespace ProxyClientx
       }
 
       client.Close();
+      Thread.Sleep(1000);
       Environment.Exit(0);
     }
 

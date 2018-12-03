@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3A1A83C4-23A1-4A54-A445-E27E91E59258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProxyClientx</RootNamespace>
+    <RootNamespace>nsProxyClient</RootNamespace>
     <AssemblyName>ProxyClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ProxyClientx.Program</StartupObject>
+    <StartupObject>nsProxyClient.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

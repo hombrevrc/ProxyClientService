@@ -1,4 +1,4 @@
-﻿namespace ProxyClientx
+﻿namespace nsProxyClient
 {
   partial class ProxyClient
   {

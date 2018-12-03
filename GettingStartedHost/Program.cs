@@ -54,6 +54,7 @@ namespace GettingStartedHost
       ///localhost, port 8000, and the URI segment "GettingStarted"
       baseAddress = new Uri("http://localhost:8000/GettingStarted/");
       w("baseAddress: " + baseAddress.AbsolutePath);
+      
       ///Step 2 – Creates an instance of the ServiceHost class to host the service. 
       ///The constructor takes two parameters, the type of the class that 
       ///implements the service contract, and the base address of the service.
