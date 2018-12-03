@@ -55,15 +55,11 @@
     <Compile Include="Service1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config.xml" />
     <None Include="App.config" />
     <None Include="config\appSettings.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="config\behaviors.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="config\client.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="config\services.config">
