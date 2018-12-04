@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>nsProxyClient</RootNamespace>
     <AssemblyName>ProxyClient</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -80,12 +80,14 @@
     </EmbeddedResource>
     <None Include="config\appSettings.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="config\bindings.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="config\client.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference2\02.wsdl" />
     <None Include="Connected Services\ServiceReference2\02.xsd">
