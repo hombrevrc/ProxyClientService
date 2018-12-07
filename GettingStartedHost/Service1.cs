@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Windows.Forms;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
 
 namespace GettingStartedHost
 {
@@ -33,63 +32,34 @@ namespace GettingStartedHost
     {
       double result = n1 + n2;
 
-      if (c != null)
-      {
-        //Process proc = Process.GetProcessesByName("Calculator")[0];
-        //SetForegroundWindow(proc.MainWindowHandle);
-        //Thread.Sleep(1000);
-        //SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-        //SendKeys.SendWait(result.ToString()); SendKeys.Flush();
 
-        //SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-        //SendKeys.SendWait(n1.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{ADD}"); SendKeys.Flush();
-        //SendKeys.SendWait(n2.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{ENTER}"); SendKeys.Flush();
+      try
+      {
+        Console.WriteLine(result.ToString());
+        Debug.WriteLine(result.ToString());
+      }
+      catch (Exception)
+      {
+        return 0;
 
       }
-      Console.WriteLine(result.ToString());
+
       return result;
     }
 
     public double Subtract(double n1, double n2)
     {
       double result = n1 - n2;
-      if (c != null)
-      {
-        Process proc = Process.GetProcessesByName("Calc.exe")[0];
-        SetForegroundWindow(proc.MainWindowHandle);
-        Thread.Sleep(1000);
-        SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-        SendKeys.SendWait(result.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-        //SendKeys.SendWait(n1.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{SUBTRACT}"); SendKeys.Flush();
-        //SendKeys.SendWait(n2.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{ENTER}"); SendKeys.Flush();
 
-      }
       Console.WriteLine(result.ToString());
+      Debug.WriteLine(result.ToString());
       return result;
     }
 
     public double Multiply(double n1, double n2)
     {
       double result = n1 * n2;
-      if (c != null)
-      {
-        Process proc = Process.GetProcessesByName("Calc.exe")[0];
-        SetForegroundWindow(proc.MainWindowHandle);
-        Thread.Sleep(1000);
-        SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-        SendKeys.SendWait(result.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-        //SendKeys.SendWait(n1.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{MULTIPLY}"); SendKeys.Flush();
-        //SendKeys.SendWait(n2.ToString()); SendKeys.Flush();
-        //SendKeys.SendWait("{ENTER}"); SendKeys.Flush();
 
-      }
       Console.WriteLine(result.ToString());
       return result;
     }
@@ -97,85 +67,70 @@ namespace GettingStartedHost
     public double Divide(double n1, double n2)
     {
 
+      double result = n1 / n2;
 
-      if (Math.Abs(n2) > 0.001)
-      {
-        double result = n1 / n2;
-        if (c != null)
-        {
-          Process proc = Process.GetProcessesByName("Calc.exe")[0];
-          SetForegroundWindow(proc.MainWindowHandle);
-          Thread.Sleep(1000);
-          SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-          SendKeys.SendWait(result.ToString()); SendKeys.Flush();
-          //SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-          //SendKeys.SendWait(n1.ToString()); SendKeys.Flush();
-          //SendKeys.SendWait("{DIVIDE}"); SendKeys.Flush();
-          //SendKeys.SendWait(n2.ToString()); SendKeys.Flush();
-          //SendKeys.SendWait("{ENTER}"); SendKeys.Flush();
+      Console.WriteLine(result.ToString());
+      return result;
 
-        }
-        else
-        {
-          SendKeys.SendWait("{ESC}"); SendKeys.Flush();
-          SendKeys.SendWait("0"); SendKeys.Flush();
-        }
-        Console.WriteLine(result.ToString());
-        return result;
-      }
-      return 0.0;
+
     }
 
-    private System.Diagnostics.Process c = null;
-
-    [DllImport("User32.dll")]
-    public static extern int SetForegroundWindow(IntPtr point);
-    public bool Calc()
+    public bool NotifyClientStartup()
     {
 
-      if (c == null)
-      {
+      Console.WriteLine("Client Just Started");
 
-        try
-        {
-          c = System.Diagnostics.Process.Start("Calc.exe");
-          c.WaitForInputIdle();
+      return true;
 
-          IntPtr h = c.MainWindowHandle;
-          SetForegroundWindow(h);
-
-
-
-          return true;
-        }
-        catch (Exception ex)
-        {
-          Debug.WriteLine(ex.Message);
-          throw;
-        }
-      }
-      return false;
     }
 
-    public void CloseCalc()
+
+
+
+
+
+  }
+
+
+  public class MetadataExchange : IMetadataExchange
+  {
+    public IAsyncResult BeginGet(Message request, AsyncCallback callback, object state)
     {
       try
       {
-        if (c != null)
-        {
-          c.Kill();
-          c = null;
-          w("Calc Closed");
-        }
+        Debug.WriteLine("IAsyncResult BeginGet");
       }
-      catch (Exception)
+      catch (Exception ex)
       {
-        throw;
+        Debug.WriteLine(ex.Message);
       }
-
+      return null;
     }
 
+    public Message EndGet(IAsyncResult result)
+    {
+      try
+      {
+        Debug.WriteLine("Message EndGet");
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
+      return null;
+    }
 
-
+    public Message Get(Message request)
+    {
+      try
+      {
+        Debug.WriteLine("Message Get");
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
+      return null;
+    }
   }
 }

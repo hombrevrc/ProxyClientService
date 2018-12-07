@@ -1,21 +1,23 @@
-﻿using nsProxyClient.ServiceReference2;
+﻿
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-
 namespace nsProxyClient
 {
   public partial class ProxyClient : Form
   {
-    private CalculatorClient client = new CalculatorClient();
-
+    //private CalculatorClient client = new CalculatorClient();
+    private nsProxyClient.ServiceReference1.ISimpleService s = new nsProxyClient.ServiceReference1.
     public ProxyClient()
     {
       InitializeComponent();
+      Debug.WriteLine(s.SimpleMethod());
     }
 
     private void ProxyClient_Load(object sender, EventArgs e)
     {
+
       tbValue1.Text = "";
       tbValue2.Text = "";
       lblOperation.Text = "";
@@ -68,6 +70,7 @@ namespace nsProxyClient
       double.TryParse(tbValue1.Text, out value1);
       double.TryParse(tbValue2.Text, out value2);
       double result = client.Subtract(value1, value2);
+
       lblresult.Text = result.ToString("0.00");
     }
 

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+﻿using System.ServiceModel;
 
 namespace GettingStartedHost
 {
-  [ServiceContract(Namespace = "http://acleite/myservices/2018/12/02")]
+  [ServiceContract(Namespace = "http://acleite/myservices/2018/12/07")]
   public interface ICalculator
   {
     [OperationContract]
@@ -19,9 +14,7 @@ namespace GettingStartedHost
     [OperationContract]
     double Divide(double n1, double n2);
     [OperationContract]
-    bool Calc();
-    [OperationContract]
-    void CloseCalc();
+    bool NotifyClientStartup();
   }
 
 }

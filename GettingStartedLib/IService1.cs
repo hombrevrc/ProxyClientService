@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+﻿using System.ServiceModel;
 
 namespace GettingStartedLib
 {
-  [ServiceContract(Namespace = "http://acleite/myservices/2018/12/02")]
+  [ServiceContract(Namespace = "http://acleite/myservices/2018/12/07")]
   public interface ICalculator
   {
     [OperationContract]
