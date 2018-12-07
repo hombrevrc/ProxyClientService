@@ -9,30 +9,30 @@ namespace GettingStartedHost
   {
 
     #region Properties
-    private static Uri _baseAddress;
+    //private static Uri _baseAddress;
 
-    public static Uri baseAddress
-    {
-      get { return _baseAddress; }
-      set { _baseAddress = value; }
-    }
+    //public static Uri baseAddress
+    //{
+    //  get { return _baseAddress; }
+    //  set { _baseAddress = value; }
+    //}
 
 
-    private static ServiceHost _selfHost;
+    //private static ServiceHost _selfHost;
 
-    public static ServiceHost selfHost
-    {
-      get { return _selfHost; }
-      set { _selfHost = value; }
-    }
+    //public static ServiceHost selfHost
+    //{
+    //  get { return _selfHost; }
+    //  set { _selfHost = value; }
+    //}
 
-    private static ServiceMetadataBehavior _smb;
+    //private static ServiceMetadataBehavior _smb;
 
-    public static ServiceMetadataBehavior smb
-    {
-      get { return _smb; }
-      set { _smb = value; }
-    }
+    //public static ServiceMetadataBehavior smb
+    //{
+    //  get { return _smb; }
+    //  set { _smb = value; }
+    //}
 
     #endregion Properties
 
@@ -52,13 +52,12 @@ namespace GettingStartedHost
       ///formatted as follows:[transport]://[machine-name or domain][:optional port #]/[optional URI segment]
       ///The base address for the calculator service uses the HTTP transport, 
       ///localhost, port 8000, and the URI segment "GettingStarted"
-      baseAddress = new Uri("http://localhost:8000/GettingStarted/");
-      w("baseAddress: " + baseAddress.AbsolutePath);
-      
+      Uri baseAddress = new Uri("http://localhost:8000/GettingStarted/");
+
       ///Step 2 – Creates an instance of the ServiceHost class to host the service. 
       ///The constructor takes two parameters, the type of the class that 
       ///implements the service contract, and the base address of the service.
-      selfHost = new ServiceHost(typeof(GettingStartedLib.CalculatorService), 
+      ServiceHost selfHost = new ServiceHost(typeof(CalculatorService), 
         baseAddress);
 
       try
@@ -76,7 +75,7 @@ namespace GettingStartedHost
         ///The address is appended to the base address to 
         ///identify the endpoint. The address specified in this code is "CalculatorService" 
         ///so the fully qualified address for the endpoint is "http://localhost:8000/GettingStarted/CalculatorService".
-        selfHost.AddServiceEndpoint(typeof(GettingStartedLib.ICalculator), 
+        selfHost.AddServiceEndpoint(typeof(ICalculator), 
           new WSHttpBinding(), "CalculatorService");
 
         ///Step 4 – Enable metadata exchange. 
@@ -85,7 +84,7 @@ namespace GettingStartedHost
         ///set it’s HttpGetEnabled property to true, 
         ///and add the behavior to the System.ServiceModel.ServiceHost.Behaviors* 
         ///collection of the ServiceHost instance.
-        smb = new ServiceMetadataBehavior        
+        ServiceMetadataBehavior smb = new ServiceMetadataBehavior        
         {
           HttpGetEnabled = true
         };
